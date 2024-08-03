@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex; /* 使用 Flexbox */
+        flex-direction: column; /* 垂直方向排列 */
+        align-items: center; /* 水平方向居中 */
+        justify-content: center; /* 垂直方向居中 */
+        height: 100vh; /* 使整个视口的高度 */
+        margin: 0; /* 去掉默认的边距 */
+      }
+      #fruitImage img {
+        margin-top: 20px; /* 图片与输入框之间的间距 */
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <input type="text" id="searchInput" placeholder="字典" />
+      <button onclick="searchFruit()">搜索</button>
+    </div>
+    <div id="fruitImage">
+      <!-- 图片初始化为默认值，或者为空 -->
+    </div>
+
+    <script>
+      function searchFruit() {
+        var searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        var fruitImage = document.getElementById("fruitImage");
+
+        switch (searchTerm) {
+          case "天":
+            fruitImage.innerHTML =
+              '<img src="https://img.picgo.net/2024/08/03/_20240803124407c2cd5d2082a494f3.jpg" alt="天" width="80px" height="80px" />';
+            break;
+          case "地":
+            fruitImage.innerHTML =
+              '<img src="https://img.picgo.net/2024/08/03/_20240803124417102063a685e433ca.jpg" alt="地" width="80px" height="80px"/>';
+            break;
+          case "玄":
+            fruitImage.innerHTML =
+              '<img src="https://img.picgo.net/2024/08/03/_202408031244272c1a3517a76e4376.jpg" alt="玄" width="80px" height="80px"/>';
+            break;
+          case "黄":
+            fruitImage.innerHTML =
+              '<img src="https://img.picgo.net/2024/08/03/_2024080312444802c8545abecdfa08.jpg" alt="黄" width="80px" height="80px"/>';
+            break;
+          default:
+            fruitImage.innerHTML = ""; // 清空图片或显示错误信息
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
